@@ -133,11 +133,12 @@ public class ExcelParser {
 
 
     public static void main(String[] args) {
-        String filePath="D:\\Suhaib Arshad\\Wbjee-2025\\wbjeeorcr_2022.csv";
-        //String filePath="D:\\Suhaib Arshad\\Wbjee-2025\\jee\\jee_2024_round_5.csv";
+        //String filePath="D:\\Suhaib Arshad\\Wbjee-2025\\wbjeeorcr_2022.csv";
+        String filePath="./src/main/resources/data/wbjeeorcr_2022.csv";
+        System.out.println("filepath = ====================="+filePath);
         try {
            List<WbjeeDto> fulldata= readUsersFromCSVForWbjee(filePath);
-            System.out.println("fulldata="+fulldata);
+           // System.out.println("fulldata="+fulldata);
 //            List<WbjeeDto> result=filterDataBasedOnRoundAndProgramAndCategoryAndSeatTypeAndrank("3","computer","open","jee","400000",fulldata);
 //            result.sort(Comparator.comparingInt((WbjeeDto dto)->Integer.parseInt(dto.getClosingRank())));
 //            for(var val:result){
@@ -172,7 +173,7 @@ public class ExcelParser {
             //// seatType='WBJEE Seats', quota='All India', Category='Open', openingRank='52973', closingRank='88134'}
 
             Util obj=new Util();
-            List<WbjeeDto> result=obj.predictWbjee(null,"main","140000","Computer",null,null,null,"3",fulldata);
+            List<WbjeeDto> result=obj.predictWbjee(null,"WBJEE Seats","14","Chemical Engineering",null,null,null,"Round 2",fulldata);
             //System.out.println("result ====="+result);
             result.sort(Comparator.comparingInt((WbjeeDto dto)->Integer.parseInt(dto.getClosingRank())));
             for(var val:result){
@@ -180,7 +181,7 @@ public class ExcelParser {
                 System.out.println(val);
             }
         }catch (Exception ex){
-
+            System.out.println(ex);
         }
 
     }

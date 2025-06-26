@@ -22,10 +22,14 @@ public class WbjeeController {
     @PostConstruct
     public void init() {
         List<String> filePaths = new ArrayList<>();
-        filePaths.add("D:\\Suhaib Arshad\\Wbjee-2025\\wbjeeorcr_2021.csv");
-        filePaths.add("D:\\Suhaib Arshad\\Wbjee-2025\\wbjeeorcr_2022.csv");
-        filePaths.add("D:\\Suhaib Arshad\\Wbjee-2025\\wbjeeorcr_2023.csv");
-        filePaths.add("D:\\Suhaib Arshad\\Wbjee-2025\\wbjeeorcr_2024.csv");
+//        filePaths.add("D:\\Suhaib Arshad\\Wbjee-2025\\wbjeeorcr_2021.csv");
+//        filePaths.add("D:\\Suhaib Arshad\\Wbjee-2025\\wbjeeorcr_2022.csv");
+//        filePaths.add("D:\\Suhaib Arshad\\Wbjee-2025\\wbjeeorcr_2023.csv");
+//        filePaths.add("D:\\Suhaib Arshad\\Wbjee-2025\\wbjeeorcr_2024.csv");
+        filePaths.add("./src/main/resources/data/wbjeeorcr_2021.csv");
+        filePaths.add("./src/main/resources/data/wbjeeorcr_2022.csv");
+        filePaths.add("./src/main/resources/data/wbjeeorcr_2023.csv");
+        filePaths.add("./src/main/resources/data/wbjeeorcr_2024.csv");
         //String filePath="D:\\Suhaib Arshad\\Wbjee-2025\\jee\\jee_2024_round_5.csv";
         List<List<WbjeeDto>> allData=new ArrayList<>();
         for(var filePath:filePaths) {
